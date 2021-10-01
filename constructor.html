@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>JavaScript Object Constructors</h2>
+
+    <p id="demo"></p>
+<h1>Constructor</h1>
+    <p id="demo1"></p>
+    <h1>Adding the argument to the object with values</h1>
+    <p id="demo2"></p>
+<h1>Add the method to the object</h1>
+    <p id="demo3"></p>
+<h1></h1>
+    <p id="demo4"></p>
+    <script>
+      // Constructor function for Person objects
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      // Create a Person object
+      const myFather = new Person("John", "Doe", 50, "blue");
+
+      // Display age
+      document.getElementById("demo").innerHTML =
+        "My father is " + myFather.age + ".";
+
+      // Constructor function for Person objects
+      function Person1(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+
+      // Create two Person objects
+      const myFather1 = new Person1("John", "Doe", 50, "blue");
+      const myMother1 = new Person1("Sally", "Rally", 48, "green");
+
+      // Display age
+      document.getElementById("demo1").innerHTML =
+        "My father is " + myFather1.age + ". My mother is " + myMother1.age + ".";
+
+        // Constructor function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Create 2 Person objects
+const myFather2 = new Person("John", "Doe", 50, "blue");
+const myMother2 = new Person("Sally", "Rally", 48, "green");
+
+// Add nationality to first object
+myFather2.nationality = "England";
+
+// Display nationality 
+document.getElementById("demo2").innerHTML =
+"My father is " + myFather2.nationality; 
+
+
+// Constructor function for Person objects
+function Person(first, last, age, eye) {
+  this.firstName = first;
+  this.lastName = last;
+  this.age = age;
+  this.eyeColor = eye;
+}
+
+// Create 2 Person objects
+const myFather3 = new Person("John", "Doe", 50, "blue");
+const myMother3 = new Person("Sally", "Rally", 48, "green");
+
+// Add a name method to first object
+myFather3.name = function() {
+  return this.firstName + " " + this.lastName;
+};
+
+// Display full name
+document.getElementById("demo3").innerHTML =
+"My father is " + myFather3.name(); 
+
+
+// Constructor function for Person objects
+function Person(firstName,lastName,age,eyeColor) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.age = age;
+  this.eyeColor = eyeColor;
+  this.changeName = function (name) {
+    this.lastName = name;
+  }
+}
+// Create a Person object
+const myMother4 = new Person("Sally","Rally",48,"green");
+
+// Change last name
+myMother4.changeName("Doe4");
+
+// Display last name
+document.getElementById("demo4").innerHTML =
+"My mother's last name is " + myMother4.lastName;
+    </script>
+  </body>
+</html>

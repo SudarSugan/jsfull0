@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<p>Displaying a JavaScript object will output [object Object]:</p>
+
+<p id="demo"></p>
+
+<h1>Display object properties:</h1>
+<p id="demo1"></p>
+
+<h1>Display objects properties in loop</h1>
+<p id="demo2"></p>
+
+<h1>Object.values() converts an object to an array.</h1>
+<p id="demo3"></p>
+
+<h1>Display properties in JSON format</h1>
+<p id="demo4"></p>
+
+
+<h1>JSON.stringify will not stringify functions</h1>
+<p id="demo5"></p>
+
+<h1>JSON.stringify can be array</h1>
+<p id="demo6"></p>
+<script>
+const person = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+document.getElementById("demo").innerHTML = person;
+
+const person1 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+document.getElementById("demo1").innerHTML = person1.name + ", " + person1.age + ", " + person1.city;
+
+
+const person2 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+let txt = "";
+for (let x in person2) {
+  txt += person2[x] + " ";
+};
+
+document.getElementById("demo2").innerHTML = txt;
+
+const person3 = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+document.getElementById("demo3").innerHTML = Object.values(person3);
+
+
+const person4 = {
+  name: "John",
+  age: 30,
+  city: "New York",
+  today: new Date()
+
+
+};
+
+document.getElementById("demo4").innerHTML = JSON.stringify(person4);
+
+const person5 = {
+  name: "John",
+  age: function () {return 30;}
+};// without declaring the function as a string
+const person6 = {
+  name: "John",
+  age: function () {return 30;}
+};
+person6.age = person6.age.toString(); // with using the function as a string
+
+document.getElementById("demo5").innerHTML = JSON.stringify(person5 && person6);
+
+
+const arr = ["John", "Peter", "Sally", "Jane"];
+document.getElementById("demo6").innerHTML = JSON.stringify(arr [2]);
+</script>
+
+</body>
+</html>

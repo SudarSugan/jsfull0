@@ -1,0 +1,52 @@
+<html>
+  <body>
+    <h2>The JavaScript <i>this</i> Keyword</h2>
+    <p>In this example, <b>this</b> represents the <u>person</u> object.</p>
+    <p>Because the person object "owns" the fullName method.</p>
+
+    <p id="demo"></p>
+    <h1>Cheanging the strings into uppercase</h1>
+    <p id="demo1"></p>
+
+    <script>
+      // Create an object:
+      const person = {
+        firstName: "John",
+        lastName: 21,
+        id: 5566,
+        Details: function () {
+          return (
+            "FirstName:" +
+            " " +
+            this.firstName +
+            " " +
+            "<br>" +
+            "LastName:" +
+            " " +
+            this.lastName +
+            "<br>" +
+            " " +
+            "ID:" +
+            " " +
+            this.id
+          );
+        },
+      };
+
+      // Display data from the object:
+      document.getElementById("demo").innerHTML = person.Details();
+
+      const person1 = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+      };
+      person1.name = function () {
+        return (this.firstName + " " + this.lastName).toUpperCase();
+      };
+
+      document.getElementById("demo1").innerHTML =
+        "My father is " + person1.name();
+    </script>
+  </body>
+</html>

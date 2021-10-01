@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forEach</title>
+</head>
+<body>
+    <script>
+        const companies =
+[{name:"Company one", category: "Finance", start: 1789, end: 2000},
+
+{name:"Company two", category: "wholesale", start: 1489, end: 1990},
+
+{name:"Company three", category: "cotton", start: 1555, end: 2018},
+
+{name:"Company four", category: "Press", start: 1578, end: 1898},
+
+{name:"Company five", category: "Textual", start: 1000, end: 1889},
+
+{name:"Company six", category: "Finance", start: 1545, end: 1999},
+
+{name:"Company seven", category: "Retail", start: 1995, end: 2021},
+
+{name:"Company eight", category: "Diary", start: 1989, end: 2020},
+
+];
+
+const age=
+[55,60,57,12,22,24,23,33,35, 34, 44,45,85,99,100];
+
+// // This just the for loop
+for (let i=0; i< companies.length ; i++){
+     console.log(companies)
+ }
+
+// This is Just ForEach loop
+ companies.forEach(function(company){
+     document.write(company.name+"<br> <br>");
+ })
+
+    </script>
+    
+</body>
+</html>

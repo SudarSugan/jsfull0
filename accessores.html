@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Getters and Setters</h2>
+
+<p>Getters and setters allow you to get and set object properties via methods.</p>
+
+<p>This example uses a lang property to get the value of the language property:</p>
+
+<p id="demo"></p>
+<h1>Object data can be accessed using property stored as a function</h1>
+<p id="demo1"></p>
+
+<h1>Object data can be call by getter</h1>
+<p id="demo2"></p>
+
+
+<h1>get and set methods its allow  u to set the value in the methods</h1>
+<p id="demo3"></p>
+
+<h1>perfet for creating a counter</h1>
+<p id="demo5"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+  get lang() {
+    return this.language;
+  }
+};
+
+// Display data from the object using a getter:
+document.getElementById("demo").innerHTML = person.lang;
+
+// Create an object:
+const person1 = {
+  firstName: "John",
+  lastName: "Doe",
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+
+// Display data from the object using a method:
+document.getElementById("demo1").innerHTML = person1.fullName();
+
+
+// Create an object:
+const person2 = {
+  firstName: "John",
+  lastName: "Doe",
+  get fullName() {
+    return this.firstName + " " + this.lastName;
+  }
+};
+// Display data from the object using a getter:
+document.getElementById("demo2").innerHTML = person2.fullName;
+
+const person3 = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "en",
+  get lang() {
+    return this.language.toUpperCase();
+  }
+};
+// Display data from the object using a getter:
+document.getElementById("demo3").innerHTML = person3.lang;
+
+// another methods 
+/*const person = {
+  firstName: "John",
+  lastName: "Doe",
+  language: "",
+  set lang(lang) {
+    this.language = lang.toUpperCase();
+  }
+};
+
+// Set a property using set:
+person.lang = "en";*/
+
+
+// Define an object
+const obj = {counter : 0};
+
+// Define Setters and Getters
+Object.defineProperty(obj, "reset", {
+  get : function () {this.counter = 0;}
+});
+Object.defineProperty(obj, "increment", {
+  get : function () {this.counter++;}
+});
+Object.defineProperty(obj, "decrement", {
+  get : function () {this.counter--;}
+});
+Object.defineProperty(obj, "add", {
+  set : function (value) {this.counter += value;}
+});
+Object.defineProperty(obj, "subtract", {
+  set : function (value) {this.counter -= value;}
+});
+
+// Play with counter:
+obj.reset;
+obj.add = 5;
+obj.subtract = 1;
+obj.increment;
+obj.decrement;
+document.getElementById("demo5").innerHTML = obj.counter;
+</script>
+</script>
+
+</body>
+</html>
